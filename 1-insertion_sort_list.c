@@ -7,7 +7,7 @@ void insertion_sort_list(listint_t **list)
 {
 	listint_t *nexty = (*list)->next;
 
-	if (!list || !*list || !nexty)
+	if (!list)
 		return;
 
 	while (nexty)
@@ -31,4 +31,4 @@ void insertion_sort_list(listint_t **list)
 		}
 		nexty = nexty->next;
 	}
-}
+
