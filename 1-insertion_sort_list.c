@@ -5,17 +5,17 @@
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *nexty = (*list)->next;
+	listint_t *nexty;
 
-	if (!list)
+	if (!list || !*list)
 		return;
-
+	nexty = (*list)->next;
 	while (nexty)
 	{
-		while (nexty->prev != NULL && nexty->prev->n > nexty->n)
+		while (nexty->prev && nexty->prev->n > nexty->n)
 		{
 			nexty->prev->next = nexty->next;
-			if (nexty->next != NULL)
+			if (nexty->next)
 			{
 				nexty->next->prev = nexty->prev;
 				/*nexty->prev->next = nexty->next;*/
